@@ -1,8 +1,8 @@
 const CACHE_STATIC_NAME = "static-v2";
 
 const STATIC_FILES = [
-    "/",
-    "/index.html",
+    "./",
+    "./index.html",
     "./src/js/external/perlin.js",
     "./src/js/app.js",
     "./src/js/cursor.js",
