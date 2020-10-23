@@ -1,0 +1,226 @@
+@import "trignometry";
+
+$translate: 0px;
+$maxRadius: -400px;
+$maxRadius720: 0px;
+
+$maxDegree: 360deg / 9;
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: Cinzel;
+  overflow: hidden;
+  cursor: none;
+}
+.cursor {
+  position: fixed;
+  // display: none;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  z-index: 999999;
+  user-select: none;
+  pointer-events: none;
+  transform: scale(0.5);
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(255, 0, 0);
+
+  border-image: initial;
+  border-radius: 100%;
+  transition: border-width 0.1s linear, background-color 0.1s linear,
+    transform 0.1s linear; // cursor: "";
+  transform-origin: center;
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+.cursor-big {
+  border-width: 0;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.video {
+  width: 100vw;
+  min-height: 100vh;
+  @media (max-width: 960px) {
+    height: 100vh;
+    width: auto;
+  }
+}
+.box {
+  background-color: red;
+
+  position: absolute;
+  top: -25vh;
+  left: 15vw;
+  width: 1000px;
+  height: calc((1000px / 16) * 9);
+  transform-origin: bottom right;
+  text-align: center;
+  font-size: 2rem;
+  transform: none;
+  box-shadow: 1rem 2rem 5rem rgba(#000, 0.5);
+  border-radius: 10px;
+  transition: all 1s ease-in-out, filter 0.2s ease-in-out, box-shadow 0.2s linear;
+  background-image: url("../assets/images/astro.jpg");
+  background-size: cover;
+  @media (max-width: 960px) {
+    //$maxRadius: -100px;
+   width: 80vw;
+   height: calc((80vw / 16) * 9);
+    top: -10vh;
+    left: 10vw;
+  }
+  @media (max-width: 720px) {
+    //$maxRadius: -100px;
+    width: 90vw;
+    height: calc((90vw / 16) * 9);
+    top: 30vw;
+    left: 0vw;
+  }
+  .content {
+    color: #fff;
+    position: absolute;
+    text-align: left;
+    top: 92%;
+    left: 5%;
+    h2 {
+      font-size: 4rem;
+      margin: 0;
+      @media (max-width: 960px) {
+        font-size: 2rem;
+      }
+    }
+    a {
+      color: #fff;
+      font-weight: 800;
+      @media (max-width: 960px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  &:hover {
+    // z-index: 1000;
+    //opacity: 1;
+    filter: blur(0);
+    z-index: 100000;
+    box-shadow: 1rem 2rem 5rem rgba(255, 0, 0, 0.2);
+  }
+  @for $i from 0 through 12 {
+    &--#{$i} {
+      transform: rotate(0deg + $maxDegree * $i)
+        translate(
+          getX(($maxDegree * $i), (($maxRadius * $i)/15)),
+          getY(($maxDegree * $i), (($maxRadius * $i)/15))
+        )
+        scale($i / 8 / 4 + 0.1);
+      filter: blur(10px / $i + 0.1);
+      //opacity: $i / 8 + 0.1;
+      z-index: $i;
+      @if ($i == 9) {
+        transform: rotate(0deg + $maxDegree * $i)
+          translate(
+            getX(($maxDegree * $i), (($maxRadius * $i)/15)),
+            getY(($maxDegree * $i), (($maxRadius * $i)/15))
+          )
+          scale(0.7);
+      filter: blur(0);
+
+        z-index: 100;
+        top: -70px;
+        @media (max-width:960px) {
+          top: 10vh;
+          
+        }
+        @media (max-width:720px) {
+          top: 30vh;
+          
+        }
+        //left: 0vw;
+      }
+      @if ($i == 0 or $i == 12) {
+        transition: all 0s !important;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      @media (max-width: 960px) {
+        transform: rotate(0deg + $maxDegree * $i)
+          translate(
+            getX(($maxDegree * $i), (($maxRadius720 * $i)/15)),
+            getY(($maxDegree * $i), (($maxRadius720 * $i)/15))
+          )
+          scale($i / 8 / 4 + 0.1);
+        //opacity: $i / 8 + 0.1;
+
+        //  opacity: 0.2;
+        z-index: $i;
+        @if ($i == 9) {
+          transform: rotate(0deg + $maxDegree * $i)
+            translate(
+              getX(($maxDegree * $i), (($maxRadius720 * $i)/15)),
+              getY(($maxDegree * $i), (($maxRadius720 * $i)/15))
+            )
+            scale(1);
+          z-index: 100;
+          opacity: 1;
+
+          //left: 0vw;
+        }
+        
+      }
+    }
+  }
+}
+
+.bg {
+  &--0 {
+    background-image: url("../assets/images/astro.jpg");
+  }
+  &--1 {
+    background-image: url("../assets/images/movie.jpg");
+  }
+  &--2 {
+    background-image: url("../assets/images/horror.jpg");
+  }
+  &--3 {
+    background-image: url("../assets/images/movie.jpg");
+  }
+  &--4 {
+    background-image: url("../assets/images/hellowean.jpg");
+  }
+  &--5 {
+    background-image: url("../assets/images/horror.jpg");
+  }
+  &--6 {
+    background-image: url("../assets/images/astro.jpg");
+  }
+  &--7 {
+    background-image: url("../assets/images/movie.jpg");
+  }
+  &--8 {
+    background-image: url("../assets/images/hellowean.jpg");
+  }
+  &--9 {
+    background-image: url("../assets/images/movie.jpg");
+  }
+  &--10 {
+    background-image: url("../assets/images/astro.jpg");
+  }
+  &--11 {
+    background-image: url("../assets/images/horror.jpg");
+  }
+  &--12 {
+    background-image: url("../assets/images/hellowean.jpg");
+  }
+}
