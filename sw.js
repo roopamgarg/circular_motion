@@ -21,8 +21,8 @@ const STATIC_FILES = [
 
 self.addEventListener("install", function (event) {
   event.waitUntil(
-      (() => {
-        const cache = caches.open(CACHE_STATIC_NAME)
+      (async () => {
+        const cache = await caches.open(CACHE_STATIC_NAME)
         return cache.addAll(STATIC_FILES);
       })()
   );
