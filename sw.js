@@ -16,11 +16,11 @@ const STATIC_FILES = [
     `https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap`,
 ]
 
-self.addEventListener("install",(event) => {
+self.addEventListener("install",function(event) {
     caches.open();
     event.waitUntill(
         caches.open(CACHE_STATIC_NAME).then((cache) => {
-            cache.addAll(STATIC_FILES);
+           return cache.addAll(STATIC_FILES);
         })
     )
 })
