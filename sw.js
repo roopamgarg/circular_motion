@@ -11,6 +11,7 @@ const STATIC_FILES = [
   `${ROOT_URL}src/js/debounce.js`,
   `${ROOT_URL}src/css/style.css`,
   `${ROOT_URL}src/assets/videos/about.mp4`,
+  `${ROOT_URL}src/assets/images/cover.png`,
   `${ROOT_URL}src/assets/images/astro.jpeg`,
   `${ROOT_URL}src/assets/images/hellowean.jpeg`,
   `${ROOT_URL}src/assets/images/horror.jpeg`,
