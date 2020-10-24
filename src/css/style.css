@@ -86,7 +86,7 @@ body {
   transition: all 1s ease-in-out, -webkit-filter 0.2s ease-in-out, -webkit-box-shadow 0.2s linear;
   transition: all 1s ease-in-out, filter 0.2s ease-in-out, box-shadow 0.2s linear;
   transition: all 1s ease-in-out, filter 0.2s ease-in-out, box-shadow 0.2s linear, -webkit-filter 0.2s ease-in-out, -webkit-box-shadow 0.2s linear;
-  background-image: url("../assets/images/astro.jpg");
+  background-image: url("../assets/images/astro.jpeg");
   background-size: cover;
 }
 
@@ -385,54 +385,54 @@ body {
 }
 
 .bg--0 {
-  background-image: url("../assets/images/astro.jpg");
+  background-image: url("../assets/images/astro.jpeg");
 }
 
 .bg--1 {
-  background-image: url("../assets/images/movie.jpg");
+  background-image: url("../assets/images/movie.jpeg");
 }
 
 .bg--2 {
-  background-image: url("../assets/images/horror.jpg");
+  background-image: url("../assets/images/horror.jpeg");
 }
 
 .bg--3 {
-  background-image: url("../assets/images/movie.jpg");
+  background-image: url("../assets/images/movie.jpeg");
 }
 
 .bg--4 {
-  background-image: url("../assets/images/hellowean.jpg");
+  background-image: url("../assets/images/hellowean.jpeg");
 }
 
 .bg--5 {
-  background-image: url("../assets/images/horror.jpg");
+  background-image: url("../assets/images/horror.jpeg");
 }
 
 .bg--6 {
-  background-image: url("../assets/images/astro.jpg");
+  background-image: url("../assets/images/astro.jpeg");
 }
 
 .bg--7 {
-  background-image: url("../assets/images/movie.jpg");
+  background-image: url("../assets/images/movie.jpeg");
 }
 
 .bg--8 {
-  background-image: url("../assets/images/hellowean.jpg");
+  background-image: url("../assets/images/hellowean.jpeg");
 }
 
 .bg--9 {
-  background-image: url("../assets/images/movie.jpg");
+  background-image: url("../assets/images/movie.jpeg");
 }
 
 .bg--10 {
-  background-image: url("../assets/images/astro.jpg");
+  background-image: url("../assets/images/astro.jpeg");
 }
 
 .bg--11 {
-  background-image: url("../assets/images/horror.jpg");
+  background-image: url("../assets/images/horror.jpeg");
 }
 
 .bg--12 {
-  background-image: url("../assets/images/hellowean.jpg");
+  background-image: url("../assets/images/hellowean.jpeg");
 }
 /*# sourceMappingURL=style.css.map */

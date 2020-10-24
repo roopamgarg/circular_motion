@@ -9,10 +9,10 @@ const STATIC_FILES = [
     `${ROOT_URL}src/js/debounce.js`,
     `${ROOT_URL}src/css/style.css`,
     `${ROOT_URL}src/assets/videos/about.mp4`,
-    `${ROOT_URL}src/assets/images/astro.jpg`,
-    `${ROOT_URL}src/assets/images/hellowean.jpg`,
-    `${ROOT_URL}src/assets/images/horror.jpg`,
-    `${ROOT_URL}src/assets/images/movie.jpg`,
+    `${ROOT_URL}src/assets/images/astro.jpeg`,
+    `${ROOT_URL}src/assets/images/hellowean.jpeg`,
+    `${ROOT_URL}src/assets/images/horror.jpeg`,
+    `${ROOT_URL}src/assets/images/movie.jpeg`,
     `https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap`,
 ]
 

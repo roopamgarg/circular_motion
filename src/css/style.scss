@@ -72,7 +72,7 @@ body {
   box-shadow: 1rem 2rem 5rem rgba(#000, 0.5);
   border-radius: 10px;
   transition: all 1s ease-in-out, filter 0.2s ease-in-out, box-shadow 0.2s linear;
-  background-image: url("../assets/images/astro.jpg");
+  background-image: url("../assets/images/astro.jpeg");
   background-size: cover;
   @media (max-width: 960px) {
     //$maxRadius: -100px;
@@ -185,42 +185,42 @@ body {
 
 .bg {
   &--0 {
-    background-image: url("../assets/images/astro.jpg");
+    background-image: url("../assets/images/astro.jpeg");
   }
   &--1 {
-    background-image: url("../assets/images/movie.jpg");
+    background-image: url("../assets/images/movie.jpeg");
   }
   &--2 {
-    background-image: url("../assets/images/horror.jpg");
+    background-image: url("../assets/images/horror.jpeg");
   }
   &--3 {
-    background-image: url("../assets/images/movie.jpg");
+    background-image: url("../assets/images/movie.jpeg");
   }
   &--4 {
-    background-image: url("../assets/images/hellowean.jpg");
+    background-image: url("../assets/images/hellowean.jpeg");
   }
   &--5 {
-    background-image: url("../assets/images/horror.jpg");
+    background-image: url("../assets/images/horror.jpeg");
   }
   &--6 {
-    background-image: url("../assets/images/astro.jpg");
+    background-image: url("../assets/images/astro.jpeg");
   }
   &--7 {
-    background-image: url("../assets/images/movie.jpg");
+    background-image: url("../assets/images/movie.jpeg");
   }
   &--8 {
-    background-image: url("../assets/images/hellowean.jpg");
+    background-image: url("../assets/images/hellowean.jpeg");
   }
   &--9 {
-    background-image: url("../assets/images/movie.jpg");
+    background-image: url("../assets/images/movie.jpeg");
   }
   &--10 {
-    background-image: url("../assets/images/astro.jpg");
+    background-image: url("../assets/images/astro.jpeg");
   }
   &--11 {
-    background-image: url("../assets/images/horror.jpg");
+    background-image: url("../assets/images/horror.jpeg");
   }
   &--12 {
-    background-image: url("../assets/images/hellowean.jpg");
+    background-image: url("../assets/images/hellowean.jpeg");
   }
 }
