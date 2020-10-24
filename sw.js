@@ -19,29 +19,37 @@ const STATIC_FILES = [
 ];
 
 self.addEventListener("install", function (event) {
-  //  caches.open();
   event.waitUntil(
-    caches.open(CACHE_STATIC_NAME).then((cache) => {
-      return cache.addAll(STATIC_FILES);
-    })
+      (() => {
+        const cache = caches.open(CACHE_STATIC_NAME)
+        return cache.addAll(STATIC_FILES);
+      })()
   );
 });
 
 self.addEventListener("activate", (event) => {
-  return self.ClientRectList.claim();
+  return self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).catch(() => {
-      fetch(event.request)
-        .then((res) => {
-          return caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
-            cache.put(event.request.url, res.clone());
-            return res;
-          });
-        })
-        .catch((err) => {});
-    })
+    (async () => {
+      const cachedResponse = await caches.match(event.request);
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      const response = await fetch(event.request);
+
+      if (!response || response.status !== 200 || response.type !== "basic") {
+        return response;
+      }
+
+      const responseToCache = response.clone();
+      const cache = await caches.open(CACHE_DYNAMIC_NAME);
+      await cache.put(event.request, responseToCache);
+
+      return response;
+    })()
   );
 });
