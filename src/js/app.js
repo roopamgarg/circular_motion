@@ -18,7 +18,7 @@ const rotateOneCard = (e) => {
    
   for (let i = 0; i < len; i++) {
     if (elements[i].classList.contains(`box--0`)) {
-      if (e.deltaY < 0) {
+      if (e.deltaY > 0) {
         for (let j = 0; j < len; j++) {
           elements[(i + j) % len].classList.remove(`box--${(j) % len}`);
           elements[(i + j) % len].classList.add(`box--${(j + 1) % len}`);
