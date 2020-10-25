@@ -61,7 +61,7 @@ body {
   background-color: red;
 
   position: absolute;
-  top: -20vh;
+  top: -10vh;
   left: 15vw;
   width: 1000px;
   height: calc((1000px / 16) * 9);
@@ -137,7 +137,7 @@ body {
       filter: blur(0);
 
         z-index: 100;
-        top: -85px;
+        top: -10vh;
         @media (max-width:960px) {
           top: 10vh;
           
