@@ -69,7 +69,7 @@ body {
 .box {
   background-color: red;
   position: absolute;
-  top: -10vh;
+  top: -15vh;
   left: 15vw;
   width: 1000px;
   height: calc((1000px / 16) * 9);
@@ -304,7 +304,7 @@ body {
   -webkit-filter: blur(0);
           filter: blur(0);
   z-index: 100;
-  top: -10vh;
+  top: -15vh;
 }
 
 @media (max-width: 960px) {
