@@ -1,6 +1,7 @@
 
 const elements = document.getElementsByClassName("box");
 const len = elements.length;
+let autoRotate = true;
 
 if('serviceWorker' in navigator){
   navigator.serviceWorker
@@ -15,10 +16,14 @@ if('serviceWorker' in navigator){
 
 
 const rotateOneCard = (e) => {
-   
+   if(e){
+    if(interval){
+      clearInterval(interval);
+    }
+   }
   for (let i = 0; i < len; i++) {
     if (elements[i].classList.contains(`box--0`)) {
-      if (e.deltaY > 0) {
+      if (e && e.deltaY && e.deltaY > 0) {
         for (let j = 0; j < len; j++) {
           elements[(i + j) % len].classList.remove(`box--${(j) % len}`);
           elements[(i + j) % len].classList.add(`box--${(j + 1) % len}`);
@@ -35,8 +40,12 @@ const rotateOneCard = (e) => {
     }
   }
 }
+const interval = setInterval(rotateOneCard,2000);
 
 const getCustomCard = (i) => {
+  if(interval){
+    clearInterval(interval);
+  }
   for (let k = 0; k < len; k++) {
     if(elements[i].classList.contains(`box--${k}`)){
         const diff = ((9 - i) < 0) ? i + len : 9 - k;
@@ -64,3 +73,5 @@ window.addEventListener(
   "touchmove",
   debounce(rotateOneCard, 30)
 );
+
+
